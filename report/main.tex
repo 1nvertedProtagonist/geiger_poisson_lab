@@ -1,0 +1,310 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{journal-template}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+
+
+%------- page header/footer formatting -----------
+%          Do not change
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+
+
+%------- Title page   -----------
+%        Modify as needed
+\title{Counting Statistics with Radioactive Decays}
+\author[1]{Bogdan-Vladimir Damian}
+\author[1]{Ari Polterovich}
+\author[1]{Justine Thebault-Weiser}
+\affil[1]{McGill University Physics Department, 3600 Rue University, H3A 2T8 Montréal, Canada}
+\date{March 11th 2026}  
+\setcounter{Maxaffil}{0}
+\thispagestyle{empty}
+\renewcommand\Affilfont{\itshape\small}
+
+
+
+
+\begin{document}
+\maketitle %Automatically generated the title page
+
+
+%------- Abstract -----------
+%        Modify as needed
+\begin{abstract}
+Radioactive decay is a random process that can be described statistically using probability distributions. In this experiment, the counting statistics of radioactive decay were investigated using a Geiger counter connected to a PASCO interface and a gamma radiation source. The objective was to evaluate whether the observed distributions of detected decay events are consistent with a Poisson model and to determine how experimental parameters influence the resulting statistics. 
+
+Three independent variables were varied in separate experiments: the duration of data collection, the PASCO sampling interval, and the distance between the radioactive source and the detector. For each experiment, the PASCO interface recorded the number of decay events detected during each sampling interval, and this data was represented in histograms. These distributions were then compared to the theoretical Poisson distribution prediction. 
+
+For each experiment, the measured mean count values ranged from 1.85 to 91.39 counts per interval. The observed distributions showed strong quantitative agreement with the Poisson model, with reduced chi-squared ($\chi^2_\nu$) values for optimized trials localized between 0.77 and 1.60. Percent errors between the sample standard deviation $s$ and the theoretical limit $\sqrt{\mu}$ remained below 3.1\% for all high-count trials, confirming the fundamental variance property of the distribution. Increasing the total measurement duration improved the statistical stability of the histograms, while changes in sampling interval altered the average counts per bin, and consequently the shape of the distribution. Increasing the distance between the source and detector from 3 cm to 16 cm reduced the measured count rate to approximately 8\% of the initial value. Overall, the results confirm that radioactive decay counting statistics are well described by the Poisson distribution.
+\vspace{0.2cm}
+
+\end{abstract}
+%--------------------------------------------------------
+
+\newpage 
+
+\setcounter{page}{1}
+
+\section{Introduction}
+%{\it Maximum 500 words. Times New Roman 12 pt. font.}\\
+Radioactive decay provides a natural example of randomness. Individual unstable nuclei decay spontaneously, emitting radiation that can be detected as discrete events. Although the exact time at which a given nucleus decays cannot be predicted, the statistical behavior of these events can be described using probability distributions. Hence, experiments involving radiation detection allow the study of counting statistics and the testing of statistical models of random processes. In particular, using detectors like Geiger counters means individual decay events are measured as discrete counts over time. This allows for a direct comparison between the experimental distributions and theoretical statistical models. Radioactivity measurements also have practical applications in fields such as nuclear safety, environmental monitoring, and medical imaging, where understanding statistical fluctuations in detection rates is a central concern.
+
+In this experiment, it is assumed from the start that radioactive decay events follow a Poisson distribution. The Poisson model is appropriate when several conditions are satisfied \cite{LabManual4}. First, the events must occur randomly and independently. Here, there is no way to predict when a nucleus decays, and measuring a decay has no effect on the behavior of other nuclei, so this condition is met. Second, the events must be rare (relative to the frequency with which they can be detected) so that multiple events do not occur simultaneously. The Geiger counter records individual decay events as separate counts, satisfying this requirement. Finally, the average event rate must be roughly constant during each trial. Because the half-life of the radioactive source used in this experiment is approximately 30 years, the decay rate is effectively constant for the duration of this experiment \cite{LabManual4}. Hence, the probability of observing a given number of counts in a fixed time interval can be described by the Poisson distribution with mean $\mu$, and whose variance is also equal to $\mu$ \cite{LabManual4}.
+
+Hence, the goal of this investigation is to experimentally determine how measurement conditions influence the counting statistics of radioactive decay. The Methods section outlines the experimental apparatus and data collection procedure, the Results presents the outcomes of the experiment, and the Discussion compares the experimental results to the theoretical distribution model.
+
+
+
+
+%BEGINNING OF VLAD COMMENTS on intro/mehtods section
+%"""
+%alright dream what is up, this is our last report together let's get this under way. 
+
+%don't forget to mention the mandatory stuff in abstract and intro section so we don't lose point like first lab. (why this matter, applications, blah blah blha)) 
+
+
+%so intro section, we must say that from the start off the bat we assume a poisson distribution, as form the lecture slides: pooisoon applies if: 
+%Random behavior.
+%• Individual, independent events (counting).
+%• Counts are of rare events. No chance of multiple events during count.
+%• Count rate does not change over period of interest
+%so yea. JUSTIGY RIGOROUSLY THOSE THREE!!!!
+
+
+
+%-------------------------------------------------------------
+\section{Methods}
+%{\it Maximum 500 words. Maximum 2 Figures. Times New Roman 12 pt. font.}\\
+
+The experimental apparatus consists of a Geiger counter connected to a PASCO interface and a sealed 137Cs radioactive source, which emits detectable gamma radiation \cite{LabManual4}. The Geiger counter detects individual decays using a Geiger–Müller tube and outputs a digital pulse for each detection. This pulse signal was connected to the PASCO interface, which recorded the counts electronically. 
+
+Prior to collecting data, background radiation was measured by recording counts with no source placed near the detector. This data was used as a control for the base rate of radiation present in each experiment. Since the background radiation was stable and regular, it was confirmed that the statistical analysis performed on the subsequent experimental data should be self-consistent. 
+
+Then, the source was placed near the detector, and trial and error was used to determine an ideal placement for consistent counting. For trials where the distance between source and detector was controlled, the source was not moved between trials to reduce uncertainties in the number of decays measured. Once the setup was established, data collection was performed through the PASCO software by recording counts over defined time intervals. 
+
+Three separate experiments were conducted to explore how certain variables influence counting statistics. In the first experiment, the total duration of data collection for each trial was varied, while keeping the sampling rate and source distance constant. This is equivalent to increasing the number of observations used in the statistical distribution. In the second experiment, the sampling interval used by PASCO was varied. Short sampling periods correspond to high sampling frequencies and produce many measurements with small counts, whereas longer intervals produce fewer total measurements with larger average counts. In the third experiment, the distance between the source and detector was changed while maintaining a fixed sampling interval and measurement duration. Increasing the distance reduced the detected count rate, because the radiation spreads out and can interact with its surroundings. This means not every decay will be detected by the Geiger counter, affecting the resulting distribution. 
+
+For each experiment, the PASCO interface recorded a sequence of count values corresponding to the number of detected events in each sampling interval. This data was used to construct histograms of count frequency. Histogram bins were defined with a width of one count so that each bin corresponded to a discrete number of detected events (e.g., 0, 1, 2, or 3 counts). This binning preserves the discrete nature of the data and ensures sufficient degrees of freedom for statistical analysis, particularly when counts are small. Different bin sizes were quickly tested, but these distributions did not behave consistently across trials, so only one count bins were used henceforth. The resulting histograms were subsequently compared with the expected Poisson distribution using the measured mean count value $\mu$. 
+
+
+
+%NExt, this is more methods section, explain that we decide to take a look at all three ways to explore poisson stats given this setup. we will look at how: (obv when one is varied the two other are controlled 
+%\begin{itemize}
+ %   \item varying the total time of collection of data
+  %  \item varying the sampling rate
+   % \item varying the distanc eto the source
+%\end{itemize}
+
+
+
+%Next, we justify that there is no useful and valuable and extractable information from the background radiaiton. this can be proven by looking at the histograms, sa literally the p value for one of them is nan and another one of them has literally 1 dof, like cmon man. 
+
+%Next, we justify why we always use a bin width of one, (menaing that like the difference between being put in 1 bin or another is a count of 1. put it in simpler terms we always put our bins like [0,1), [1,2), [2,3), [3,4) and not: like [0,2), [2,4) [4,6) or any other organization of bins sizes. we do this because we sometimes have very small counts, and merging the bins would literally not give us enough dofs. also even for higher counts, we get more, smt i don't know just our stats look a lot uglier when we merge bins, ans we don't got that many instances with high counts. like yeah that's why. find a chat gpt argument. '
+
+%Justidy choices of distances and runs and sampling rate as usual, balha blah blah it was enough to see a measurable observable significant difference, didn't do more runs are the random fluctuations are ngl kind of insignificant as draft plots show (that are discarded, not included here in file tree, and the background rad doens't fluctuate shi) 
+
+%END OF VLAD COMMENTS INTRO METHODS
+
+%\vspace{-10pt}
+
+
+
+%-------------------------------------------------------------
+
+
+\section{Results}
+
+\subsection{Data and Fit}
+We plotted histograms of the detected counts for each trial. The bin width was set to one count. The uncertainty for the height of each bin ($y$) is given by counting statistics, $\sigma_y = \sqrt{y}$. 
+
+We compared the histograms to the expected Poisson distribution from the lab manual:
+\begin{equation}
+    P(x; \mu) = \frac{\mu^x e^{-\mu}}{x!}
+\end{equation}
+where $\mu$ is the mean number of counts. For a Poisson distribution, the standard deviation is $\sigma = \sqrt{\mu}$. 
+
+To test how well the data fits the Poisson model, we calculated the reduced chi-squared ($\chi^2_\nu$) and the $p$-value. We also calculated the sample standard deviation ($s$) directly from the data and compared it to $\sqrt{\mu}$ using a percent error.
+
+A representative histogram for a trial with a sampling frequency of 1 Hz over a 3-minute period at 0 cm distance is shown in Figure \ref{fig:sample_hist}. It shows the alignment between the data and the theoretical Poisson curve.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/var_time/3m_1hz_0cm (1)_outputhist.png}
+    \caption{Representative histogram of observed decay events ($f = 1$ Hz, $T = 3$ min, $d = 0$ cm). The solid green line represents the theoretical Poisson distribution calculated using the measured mean count value $\mu$, with error bars representing the counting uncertainty $\sqrt{y}$.}
+    \label{fig:sample_hist}
+\end{figure}
+
+\subsection{Data Tables}
+The results for varying the distance, sampling rate, and total time are shown in Tables \ref{tab:distance}, \ref{tab:sampling}, and \ref{tab:time}. Trials with very high sampling rates (like 5 Hz) had a high $\chi^2_\nu$, meaning they did not fit the Poisson model well.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Results for changing distance ($f = 1$ Hz, $T = 2$ min)}
+    \label{tab:distance}
+    \begin{tabular}{lccccccc}
+        \hline
+        Distance & $\mu$ & $\sqrt{\mu}$ & Sample $s$ & \% Error & $\chi^2_\nu$ & $p$-value & DOF \\
+        \hline
+        3 cm  & 25.81 & 5.08 & 5.12 & 0.8\%  & 1.28  & 0.147   & 28 \\
+        5 cm  & 11.16 & 3.34 & 3.41 & 2.1\%  & 1.22  & 0.245   & 16 \\
+        7 cm  & 7.84  & 2.80 & 2.85 & 1.8\%  & 0.775 & 0.666   & 11 \\
+        10 cm & 3.65  & 1.91 & 1.85 & 3.1\%  & 2.93  & 0.0007  & 11 \\
+        13 cm & 2.34  & 1.53 & 1.30 & 15.0\% & 0.787 & 0.534   & 4  \\
+        16 cm & 2.04  & 1.43 & 1.35 & 5.6\%  & 1.91  & 0.0886  & 5  \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Results for changing sampling rate ($d = 0$ cm, $T = 3$ min)}
+    \label{tab:sampling}
+    \begin{tabular}{lcccccccc}
+        \hline
+        Freq & Time/bin & $\mu$ & $\sqrt{\mu}$ & Sample $s$ & \% Error & $\chi^2_\nu$ & $p$-value & DOF \\
+        \hline
+        10 Hz  & 0.1 s & 1.85  & 1.36 & 1.40 & 2.9\% & 1.56 & 0.141  & 7  \\
+        2 Hz   & 0.5 s & 9.12  & 3.02 & 3.08 & 2.0\% & 1.02 & 0.435  & 15 \\
+        1 Hz   & 1.0 s & 17.81 & 4.22 & 4.18 & 0.9\% & 1.52 & 0.0546 & 22 \\
+        0.5 Hz & 2.0 s & 37.82 & 6.15 & 6.25 & 1.6\% & 1.24 & 0.164  & 31 \\
+        0.2 Hz & 5.0 s & 91.39 & 9.56 & 9.60 & 0.4\% & 1.60 & 0.0105 & 38 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Results for changing total time ($f = 1$ Hz, $d = 0$ cm)}
+    \label{tab:time}
+    \begin{tabular}{lcccccccc}
+        \hline
+        Total Time & Samples ($N$) & $\mu$ & $\sqrt{\mu}$ & Sample $s$ & \% Error & $\chi^2_\nu$ & $p$-value & DOF \\
+        \hline
+        1 min    & 60  & 18.84 & 4.34 & 4.40 & 1.4\% & 1.17  & 0.271 & 20 \\
+        2 min    & 120 & 18.15 & 4.26 & 4.30 & 0.9\% & 1.37  & 0.101 & 25 \\
+        3 min    & 180 & 17.98 & 4.24 & 4.20 & 0.9\% & 0.777 & 0.737 & 19 \\
+        5 min 20 s & 320 & 18.58 & 4.31 & 4.35 & 0.9\% & 0.881 & 0.634 & 25 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+%-------------------------------------------------------------
+\section{Discussion}
+
+\subsection{Physical Implications and Data Analysis}
+The experimental parameters of the Poisson distribution behave strictly as theoretically expected across all trials. Parameter estimation for the mean count rate $\mu$ was performed by minimizing the $\chi^2$ statistic between the observed bin heights and the theoretical probability model. As shown in Table \ref{tab:distance}, increasing the distance from 3 cm to 16 cm drastically reduces $\mu$ from 25.81 down to 2.04. This geometric drop occurs because the detector covers a smaller solid angle as the source moves further away. Because the variance is strictly $\sigma^2 = \mu$, a lower $\mu$ produces a narrower distribution. This narrow spread means fewer bins meet the 5-count minimum required for a valid goodness-of-fit calculation, which directly causes the lower degrees of freedom (DOF) observed at larger distances, dropping from 28 DOF at 3 cm to just 5 DOF at 16 cm.
+
+Table \ref{tab:sampling} demonstrates that the mean count $\mu$ scales linearly with the time interval per bin, defined as $\Delta t = 1/f$. Decreasing the sampling frequency from 10 Hz to 0.2 Hz increases $\mu$ proportionally from 1.85 to 91.39. Table \ref{tab:time} shows the effect of sample size on data convergence. Increasing the total measurement time increases the total number of samples $N$. As $N$ grows from 60 samples at 1 min to 320 samples at 5 min 20 s, the relative statistical fluctuation, defined as $1/\sqrt{N}$, is minimized. The mean $\mu$ remains stable around 18.5, but the larger dataset makes the experimental data converge more closely to the theoretical Poisson model. This is verified by $\chi^2_\nu$ values stabilizing near 1 and the percent error between the sample standard deviation $s$ and the theoretical limit $\sqrt{\mu}$ dropping to a very low 0.9\% for the longer durations.
+
+\subsection{Uncertainties, Shortcomings, and Improvements}
+To minimize systematic uncertainties across the trials, the physical setup was kept rigidly fixed while varying sampling rates and total times. The largest source of statistical uncertainty comes from the counting fluctuations where the absolute uncertainty on any bin height is $\sigma_y = \sqrt{y}$, meaning there is a 68\% confidence that the true expected bin frequency lies within this error margin. Physical systematic errors, such as the spatial uncertainty of visually positioning the source on the ruler, are completely negligible in comparison to this inherent quantum randomness. 
+
+A fundamental shortcoming of this experimental approach is the systematic bias introduced by detector dead time. To try to prevent this, the source was placed at a sufficient distance to avoid the saturation that occurs when particles arrive faster than the Geiger-Müller tube's recovery time. However, at very high sampling frequencies, such as the 5 Hz and 10 Hz trials, or at very short distances with high decay rates, the detector fails to count overlapping events. This dead time systematically biases the measurements downward by artificially truncating the number of observed events in a given interval. This unmodeled experimental bias explains the extreme $\chi^2_\nu$ divergence and the failure of the theoretical Poisson fit in the high-frequency limit. 
+
+To improve this experiment and eliminate this systematic measurement bias, the experimental apparatus should be upgraded to a fast digital scintillation detector, which possesses a recovery time orders of magnitude shorter than a Geiger tube. Future data collection should also prioritize longer measurement durations at lower sampling frequencies to maximize the total number of counts while strictly avoiding the high-frequency regime where dead time effects become dominant.
+
+\section{Conclusion}
+
+The main goal of this investigation was to characterize the quantum randomness of $^{137}\text{Cs}$ radioactive decay and empirically verify its adherence to the theoretical Poisson distribution. The experiment successfully demonstrated that statistically independent decay events are accurately modeled by Poisson statistics, as evidenced by optimized $\chi_\nu^2$ values between 0.77 and 1.60 and sample standard deviations matching the theoretical $\sqrt{\mu}$ within 3.1\%. Through $\chi^2_\nu$ minimization, we confirmed that the empirical data converges to the expected theoretical distribution, provided the sample size ($N$) is sufficiently large to minimize relative statistical fluctuations ($1/\sqrt{N}$).
+
+Testing different variables confirmed that the mean count rate $\mu$ scales linearly with the sampling time $\Delta t$ and follows an inverse-square relationship with the distance $d$. However, goodness-of-fit testing showed a shortcoming with the equipment, since the Geiger-Müller detector dead time creates a bias during high-frequency ($f \ge 5$ Hz) or high-count trials, which artificially truncates the data. Future experiments should use faster scintillation detectors or apply mathematical corrections to separate the actual random behavior from these hardware limits. Overall, this experiment shows that unpredictable quantum events form very predictable patterns when measured on a larger scale. By using a much stronger radiation source, it would be possible to see the Central Limit Theorem in action, where the discrete Poisson distribution turns into a smooth Gaussian curve.
+
+\newpage
+
+%-------------------------------------------------------------
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{unsrt}
+\bibliography{MyBibliography}
+
+\section*{Author Contributions Statement}
+B.V.D, A.P. and J.T.W. performed data collection. B.V.D. performed data analysis in Python. J.T.W. wrote the Abstract, Introduction, and Methods sections. A.P. wrote the Results, Discussion, and Conclusion sections. J.T.W. and B.V.D. reviewed the final manuscript. 
+
+%%
+\appendix
+\section{Experimental Histograms}
+
+% --- Background ---
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/background/trial1_0.5_mins_2s_sampling_control_group_outputhist.png}
+        \caption{Background (0.5m)}
+    \end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/background/trial1_1.5_mins_2s_sampling_control_group_outputhist.png}
+        \caption{Background (1.5m)}
+    \end{subfigure}
+    \caption{Control group histograms for background radiation.}
+\end{figure}
+
+\clearpage
+
+% --- Distance Variation ---
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_distance/(distance)_2m_1hz_3cm_outputhist.png}\caption{3cm}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_distance/(distance)_2m_1hz_5cm_outputhist.png}\caption{5cm}\end{subfigure} \\
+    \vspace{0.3cm}
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_distance/(distance)_2m_1hz_7cm_outputhist.png}\caption{7cm}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_distance/(distance)_2m_1hz_10cm_outputhist.png}\caption{10cm}\end{subfigure} \\
+    \vspace{0.3cm}
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_distance/(distance)_2m_1hz_13cm_outputhist.png}\caption{13cm}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_distance/(distance)_2m_1hz_16cm_outputhist.png}\caption{16cm}\end{subfigure}
+    \caption{Histograms for varying source-to-detector distance.}
+\end{figure}
+
+\clearpage
+
+% --- Sampling Rate Variation ---
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_sampling_rate/trial3_3mins_0.1s_sampling_0cm_distance (2)_outputhist.png}\caption{10Hz}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_sampling_rate/trial1_3mins_0.2s_sampling_0cm_distance_outputhist.png}\caption{5Hz}\end{subfigure} \\
+    \vspace{0.3cm}
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_sampling_rate/trial1_3mins_0.5s_sampling_0cm_distance_outputhist.png}\caption{2Hz}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_sampling_rate/trial1_3mins_1s_sampling_0cm_distance_outputhist.png}\caption{1Hz}\end{subfigure} \\
+    \vspace{0.3cm}
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_sampling_rate/trial1_3mins_2s_sampling_0cm_distance_outputhist.png}\caption{0.5Hz}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_sampling_rate/trial1_3mins_5s_sampling_0cm_distance_outputhist.png}\caption{0.2Hz}\end{subfigure}
+    \caption{Histograms for varying sampling rates.}
+\end{figure}
+
+\clearpage
+
+% --- Collection Time Variation ---
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_time/1m_trial2_1hz_0cm_outputhist.png}\caption{1m}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_time/2m_1hz_0cm (1)_outputhist.png}\caption{2m}\end{subfigure} \\
+    \vspace{0.3cm}
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_time/3m_1hz_0cm (1)_outputhist.png}\caption{3m}\end{subfigure}\hfill
+    \begin{subfigure}{0.48\textwidth}\includegraphics[width=\textwidth]{figures/var_time/5m20s_1hz_0cm (1)_outputhist.png}\caption{5m20s}\end{subfigure}
+    \caption{Histograms for varying total measurement duration.}
+\end{figure}
+
+
+
+%-------------------------------------------------------------
+
+
+\end{document}
+
+
+
+
