@@ -15,7 +15,7 @@ The goal was to explore the application of Poisson statistics onto random and di
 
 \- `report/` - LaTeX source (Overleaf export) and lab logbook PDF (Will be available on 12/03/2026)
 
-\- `output/photoelectric\_report.pdf` — compiled report PDF (Will be available on 12/03/2026)
+\- `output/report.pdf` — compiled report PDF (Will be available on 12/03/2026)
 
 ## Note on the use of AI assistance
 Portions of the code were written with AI assistance for scaffolding and refactoring. AI assistance was also called upon to accelerate the processes of debugging, documentation consultation and brainstorming. All AI outputs were reviewed, tested, and adapted as needed by me.
